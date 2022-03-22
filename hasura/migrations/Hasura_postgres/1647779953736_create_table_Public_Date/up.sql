@@ -1,0 +1,1 @@
+CREATE TABLE "Public"."Date" ("createdAt" date NOT NULL DEFAULT now(), "updatedAt" Date NOT NULL DEFAULT now(), PRIMARY KEY ("createdAt","updatedAt") );COMMENT ON TABLE "Public"."Date" IS E'Date_checkers';

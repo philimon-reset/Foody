@@ -1,0 +1,34 @@
+table:
+  name: User
+  schema: Public
+array_relationships:
+- name: Recipes
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: Recipe
+        schema: Public
+select_permissions:
+- permission:
+    columns:
+    - Id
+    - created_at
+    - email
+    - name
+    - updated_at
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: {}
+    columns:
+    - email
+    - name
+    - updated_at
+    filter:
+      Id:
+        _eq: X-Hasura-User-Id
+    set:
+      Id: x-hasura-User-Id
+  role: user

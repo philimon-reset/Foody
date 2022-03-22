@@ -1,0 +1,8 @@
+version: 3
+endpoint: https://foody-recipe-81.hasura.app
+metadata_directory: metadata
+admin_secret: JOLLYSECRET
+x-hasura-admin-secret: JOLLYSECRET
+actions:
+  kind: synchronous
+  handler_webhook_baseurl: https://foody-recipe-81.hasura.app
